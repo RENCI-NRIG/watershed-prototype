@@ -8,7 +8,7 @@ fi
 
 LOCALIP=`/opt/aws/bin/ec2-metadata -o|cut -d' ' -f2`
 
-BUCKETNAME=$2
+BUCKETNAME=$1
 
 echo "enable for docker service"
 chkconfig --add docker
