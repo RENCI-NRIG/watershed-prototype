@@ -7,16 +7,16 @@ The Elastic Stack is the next evolution of the ELK Stack. For more details: [ELK
 
 ## How to use ?
 
-Clone the code from the lassaress repository on any of linux CentOs-6 based server and execute the configElkServer.sh script
+Clone the code from the watershed-prototype repository on any of linux CentOs-6 based server and execute the configElkServer.sh script
 ```
-# git clone https://github.com/RENCI-NRIG/lassares.git /root/lassaress
-# /root/lassaress/configElkServer.sh <BUCKETNAME> <ELASTIC_VERSION>
+# git clone https://github.com/RENCI-NRIG/watershed-prototype.git /root/watershed-prototype
+# /root/watershed-prototype/configElkServer.sh <BUCKETNAME> <ELASTIC_VERSION>
 ```
 
 ## What does this installation do?
 - Sets up elastic user for elasticsearch, kibana and logstash
-- Creates Mapping for the Lassaress Measurements
-- Creates a Default Index for the Lassaress Measurements
+- Creates Mapping for the watershed-prototype Measurements
+- Creates a Default Index for the watershed-prototype Measurements
 - Sets up a cron job to periodically create visualizations
 
 ## Manual configuration

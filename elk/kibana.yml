@@ -15,7 +15,7 @@ server.host: "172.31.22.51"
 #server.maxPayloadBytes: 1048576
 
 # The Kibana server's name.  This is used for display purposes.
-#server.name: "lassares"
+#server.name: "watershed-prototype"
 
 # The URL of the Elasticsearch instance to use for all your queries.
 elasticsearch.url: "http://172.31.22.51:9200"

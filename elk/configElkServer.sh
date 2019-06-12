@@ -42,10 +42,10 @@ initctl start logstash
 
 echo "Setting up config files"
 #Install config files
-cp /root/lassares/elk/logstash.yml /etc/logstash/logstash.yml
-cp /root/lassares/elk/kibana.yml /etc/kibana/kibana.yml
-cp /root/lassares/elk/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
-cp /root/lassares/elk/logstash-simple.conf /etc/logstash/conf.d/logstash-simple.conf
+cp /root/watershed-prototype/elk/logstash.yml /etc/logstash/logstash.yml
+cp /root/watershed-prototype/elk/kibana.yml /etc/kibana/kibana.yml
+cp /root/watershed-prototype/elk/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
+cp /root/watershed-prototype/elk/logstash-simple.conf /etc/logstash/conf.d/logstash-simple.conf
 chmod 644 /etc/logstash/conf.d/logstash-simple.conf
 
 #Change ip address
@@ -95,7 +95,7 @@ curl -s -XPUT -u elastic:${ES_PASSWORD} "${LOCALIP}:9200/_xpack/security/user/lo
 
 echo "Begin loading templates"
 # Load any declared extra index templates
-TEMPLATES=/root/lassares/elk/templates/*.json
+TEMPLATES=/root/watershed-prototype/elk/templates/*.json
 for f in $TEMPLATES
 do
      filename=$(basename $f)
@@ -106,7 +106,7 @@ do
 done
 
 echo "Begin loading indexes"
-INDEX=/root/lassares/elk/index/*.json
+INDEX=/root/watershed-prototype/elk/index/*.json
 for f in $INDEX
 do
      filename=$(basename $f)
@@ -128,7 +128,7 @@ wget http://nodejs.org/dist/v9.11.2/node-v9.11.2-linux-x64.tar.gz -O /root/node.
 tar --strip-components 1 -xzvf /root/node.tar.gz -C /usr/
 /usr/bin/npm install elasticsearch
 
-cp -R /root/lassares/elk/cron /root/
+cp -R /root/watershed-prototype/elk/cron /root/
 #Change ip address
 LOCALIP=`/opt/aws/bin/ec2-metadata -o|cut -d' ' -f2`
 sed -i 's/172.31.22.51/'$LOCALIP'/g' /root/cron/setupLasaress.js
