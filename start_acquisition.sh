@@ -23,5 +23,5 @@ if [ $BUCKETNAME != "skip" ]; then
    /opt/aws/bin/ec2-metadata -o | cut -d' ' -f2 > /root/webserver.ip
    /usr/bin/aws s3 cp /root/webserver.ip s3://$BUCKETNAME/
 fi
-cp /root/watershed-prototype/acquisition/docker-compose.yml /root
-KAFKA_LISTENER=PLAINTEXT://$LOCALIP:9092 docker-compose up -d
+
+KAFKA_LISTENER=PLAINTEXT://$LOCALIP:9092 docker-compose up -d -f /root/watershed-prototype/acquisition/docker-compose.yml
