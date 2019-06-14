@@ -24,4 +24,4 @@ if [ $BUCKETNAME != "skip" ]; then
    /usr/bin/aws s3 cp /root/webserver.ip s3://$BUCKETNAME/
 fi
 
-KAFKA_LISTENER=PLAINTEXT://$LOCALIP:9092 docker-compose up -d -f /root/watershed-prototype/acquisition/docker-compose.yml
+KAFKA_LISTENER=PLAINTEXT://$LOCALIP:9092 docker-compose -f /root/watershed-prototype/acquisition/docker-compose.yml up -d
