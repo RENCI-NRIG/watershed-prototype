@@ -84,7 +84,7 @@
       "ConstraintDescription": "must be a valid IP CIDR range of the form x.x.x.x/x."
     },
     "S3BucketName" : {
-        "Default": "Watershed",
+        "Default": "renciwaterbucket",
         "Description" : "S3 bucket Name",
         "Type": "String",
         "MinLength": "1",
