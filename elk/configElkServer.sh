@@ -123,17 +123,4 @@ curl -s -X POST http://elastic:${ES_PASSWORD}@${LOCALIP}:5601/api/kibana/setting
      -H 'kbn-xsrf:true' -H 'Content-Type: application/json' \
      -d "{\"value\":\"${DEFAULT_INDEX_PATTERN}\"}"
 
-echo "Setup nodejs and cron job"
-wget http://nodejs.org/dist/v9.11.2/node-v9.11.2-linux-x64.tar.gz -O /root/node.tar.gz
-tar --strip-components 1 -xzvf /root/node.tar.gz -C /usr/
-/usr/bin/npm install elasticsearch
-
-cp -R /root/watershed-prototype/elk/cron /root/
-#Change ip address
-LOCALIP=`/opt/aws/bin/ec2-metadata -o|cut -d' ' -f2`
-sed -i 's/172.31.22.51/'$LOCALIP'/g' /root/cron/setupLasaress.js
-
-echo "*/1 * * * * root /usr/bin/node /root/cron/setupLasaress.js > /var/log/setupLasaress.log 2>&1" >> /etc/crontab
-service crond restart
-## TODO update kafka producer ip in logstash.conf
 echo "Configuration complete!"
