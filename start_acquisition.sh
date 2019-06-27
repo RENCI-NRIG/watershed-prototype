@@ -26,4 +26,4 @@ fi
 
 KAFKA_LISTENER=PLAINTEXT://$LOCALIP:9092 docker-compose -f /root/watershed-prototype/acquisition/docker-compose.yml up -d
 
-pip3.6 install kafka-python
+pip-3.6 install kafka-python
