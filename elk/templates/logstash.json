@@ -23,8 +23,8 @@
             "Atlas_Conductivity": {"type": "integer"},
             "Atlas_DOconc": {"type": "integer"},
             "Atlas_Temp": {"type": "integer"},
-            "DateTime": {"type": "date"},
-            "DateTimeUTC": {"type": "date"},
+            "DateTime": {"type": "date", "format": "MM/dd/yyy HH:mm:ss"},
+            "DateTimeUTC": {"type": "date", "format": "MM/dd/yyy HH:mm:ss"},
             "Location": { "type" : "geo_point" }
           }
         }
