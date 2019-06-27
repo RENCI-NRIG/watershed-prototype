@@ -401,7 +401,7 @@
                   "java-1.8.0-openjdk"  : [],
                   "java-1.8.0-openjdk-devel"  : [],
                   "git"  : [],
-                  "docker"  : []
+                  "docker"  : [],
                   "python36"  : []
               }
             },
